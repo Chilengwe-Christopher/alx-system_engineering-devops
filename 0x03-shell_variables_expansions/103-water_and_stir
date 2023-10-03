@@ -1,7 +1,2 @@
 #!/bin/bash
-echo "ibase=$(echo $WATER | tr -d -c 'a-z' | tr 'a-z' '0-9'; echo '+1')" > temp
-echo "obase=$(echo $STIR | tr -d -c 'a-z' | tr 'a-z' '0-9'; echo '+1')" >> temp
-echo $WATER | tr -d -c 'a-z' | tr 'a-z' '0-9' >> temp
-echo $STIR | tr -d -c 'a-z' | tr 'a-z' '0-9' >> temp
-bc < temp | tr -d '\n'
-rm temp
+echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $STIR | tr 'stir.' '01234'))))) | tr '01234567' 'bestchol')
