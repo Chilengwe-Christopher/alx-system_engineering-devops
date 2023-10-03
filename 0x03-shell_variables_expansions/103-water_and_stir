@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "ibase=$(echo $WATER | tr -d -c 'a-z' | tr 'a-z' '0-9'; echo '+1')" > temp
+echo "obase=$(echo $STIR | tr -d -c 'a-z' | tr 'a-z' '0-9'; echo '+1')" >> temp
+echo $WATER | tr -d -c 'a-z' | tr 'a-z' '0-9' >> temp
+echo $STIR | tr -d -c 'a-z' | tr 'a-z' '0-9' >> temp
+bc < temp | tr -d '\n'
+rm temp
