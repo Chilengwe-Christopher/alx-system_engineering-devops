@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -i 's/\broot\b/\/root/g' /etc/passwd
+find . -empty | rev | cut -d '/' -f 1 | rev

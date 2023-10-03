@@ -1,2 +1,2 @@
 #!/bin/bash
-tr -d 'C' < /etc/ssh/sshd_config
+tr -d "cC"

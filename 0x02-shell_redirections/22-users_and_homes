@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Patience, Persistence and Perspiration Make an Unbeatable Combination for Success."
+cut -d ':' -f 1,6 /etc/passwd | sort
